@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 0rem;
+    position: relative;
+}
+
+header .logo {
+    margin-left: 4rem;
+}
+
+header .logo a {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4rem;
+}
+
+.notes_container {
+    padding: .5rem .7rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    row-gap: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-top: 1rem;
+    margin-left: .5rem;
+}
+
+.notes_popup,
+.view_note_popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    padding-top: 5rem;
+    width: 100%;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.view_note_popup {
+    padding-bottom: 3rem;
+}
+
+.notes_popup .note,
+.view_note_popup .view_note,
+.notes_container .note {
+    max-width: 950px;
+    width: 90%;
+    padding: .5rem 1.3rem;
+    padding-bottom: 2.5rem;
+    border-radius: .5rem;
+    height: max-content;
+    background-color: #f3e7e7;
+    position: relative;
+    box-shadow: -1px 1px 5px #222;
+}
+
+.view_note_popup .view_note {
+    max-width: 950px;
+    width: 90%;
+    padding: 1rem 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+.view_note_popup .view_note textarea {
+    font-family: 'Poppins', sans-serif;
+    padding: 0rem .4rem;
+    border-radius: .4rem;
+}
+
+.view_note_popup .view_note .edit,
+.view_note_popup .view_note .delete {
+    border: none;
+    outline: none;
+    background-color: rgb(6, 41, 236);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    padding: .3rem 2rem;
+    margin-top: 1.5rem;
+    margin-left: calc(50% - 70px);
+    cursor: pointer;
+}
+
+.view_note_popup .view_note .delete {
+    margin-left: calc(100% - 100px);
+    position: absolute;
+    right: 1rem;
+    bottom: .9rem;
+    border-radius: 50%;
+    padding: .3rem .7rem;
+    font-size: 1.3rem;
+}
+
+.notes_container .note {
+    max-width: 300px;
+    height: 170px;
+    width: 100%;
+    cursor: pointer;
+    margin-right: .5rem;
+    padding: 0;
+}
+
+.notes_container .note textarea {
+    cursor: pointer;
+    height: 100%;
+    padding: .7rem .7rem;
+    margin: 0;
+    overflow: hidden;
+}
+
+.notes_container .note textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.note textarea {
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 1.8rem;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+.view_note_popup .view_note .view_note_text {
+    font-size: 1.4rem;
+    resize: none;
+    width: 100%;
+    height: 300px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.note .close,
+.view_note_popup .view_note .close {
+    all: unset;
+    position: absolute;
+    right: 1.1rem;
+    top: .7rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.note .save {
+    all: unset;
+    position: absolute;
+    bottom: .7rem;
+    left: calc(50% - 40px);
+    padding: .3rem 3rem;
+    background-color: rgb(6, 41, 236);
+    border-radius: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all .4s;
+}
+
+.note .save:hover {
+    background-color: rgba(6, 41, 236, .9);
+}
+
+.addNotes {
+    all: unset;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: .6rem 1.5rem;
+    background-color: rgb(6, 41, 236);
+    color: #fff;
+    border-radius: .5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.display_flex {
+    display: flex;
+}
+
+
+@media screen and (max-width: 662px) {
+    header .logo {
+        margin-left: 1.5rem;
+    }
+
+    .notes_container .note {
+        max-width: 160px;
+        height: 170px;
+    }
+
+    .addNotes {
+        font-size: 1.3rem;
+        bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .notes_container .note {
+        max-width: 400px;
+        height: 170px;
+    }
+
+    .addNotes {
+        font-size: 1rem;
+    }
+}
